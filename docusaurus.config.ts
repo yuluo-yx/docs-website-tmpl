@@ -145,11 +145,6 @@ const config: Config = {
           ],
         },
         {
-          type: 'html',
-          position: 'right',
-          value: '<div id="navbar-search"></div>',
-        },
-        {
           href: githubUrls.repo,
           label: 'GitHub',
           position: 'right',

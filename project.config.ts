@@ -44,47 +44,47 @@ export interface ProjectConfig {
 }
 
 const projectConfig: ProjectConfig = {
-  // 🏷️ Basic information - modify here to update project information
-  title: '项目名称',
-  tagline: '这是一段描述项目的文本',
-  description: '基于 Docusaurus 的双主题文档网站模板',
+  // Basic project information
+  title: 'Project Name',
+  tagline: 'A description of your project',
+  description: 'Dual-theme documentation website template based on Docusaurus',
   
-  // 👤 Author information - modify to your information
+  // Author information
   author: {
     name: 'Your Name',
     email: 'your.email@example.com',
     website: 'https://your-website.com', // optional
   },
   
-  // 📁 GitHub repository information - modify to your GitHub information
+  // GitHub repository information
   github: {
     username: 'your-username',
     repoName: 'your-repo-name',
   },
   
-  // 🌐 Website deployment information - modify to your deployment information
+  // Website deployment configuration
   deployment: {
     url: 'https://your-username.github.io',
     baseUrl: '/', // For GitHub Pages, usually '/your-repo-name/'
   },
   
-  // 🔗 Social links - optional, add your social media links
+  // Social media links (optional)
   social: {
     twitter: 'https://twitter.com/your-username',
     // discord: 'https://discord.gg/your-server',
     // linkedin: 'https://linkedin.com/in/your-profile',
   },
   
-  // 🔍 Search configuration
+  // Search functionality configuration
   search: {
     // Enable vector search functionality (requires Pinecone configuration)
-    enableVectorSearch: false, // Set to true to enable vector search
+    enableVectorSearch: true, // Set to true to enable vector search demo
     // Pinecone vector database configuration
-    // pinecone: {
-    //   apiKey: 'your-pinecone-api-key',
-    //   environment: 'your-pinecone-environment',
-    //   indexName: 'your-index-name',
-    // },
+    pinecone: {
+      apiKey: 'demo-api-key', // Replace with your actual Pinecone API key
+      environment: 'demo-environment', // Replace with your Pinecone environment
+      indexName: 'demo-index', // Replace with your index name
+    },
   },
 }
 

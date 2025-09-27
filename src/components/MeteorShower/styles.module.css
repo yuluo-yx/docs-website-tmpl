@@ -5,6 +5,6 @@
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: 9999;  /* 设置为最高层显示 */
+  z-index: 9999;  /* Set to highest layer for display */
   background: transparent;
 }

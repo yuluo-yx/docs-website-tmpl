@@ -28,13 +28,13 @@
 
 ## ✨ 核心功能
 
-### 🔍 双重搜索系统
-- **SimpleSearch**: 基于 Fuse.js 的快速本地文档搜索
-- **PineconeSearch**: 基于 Pinecone 的 AI 语义搜索（可选）
-- **统一界面**: 在首页展示两种搜索选项
-- **搜索配置**: 通过 `project.config.ts` 管理 Pinecone 设置
+### 🔍 智能双重搜索系统
+- **本地搜索**: 基于 Fuse.js 的快速文档搜索，按 `/` 键快捷访问
+- **AI 向量搜索**: 基于 Pinecone 的智能语义搜索，右下角浮动按钮
+- **全局可用**: 搜索功能在所有页面都可访问
+- **实时索引**: 自动从 Docusaurus 搜索索引获取最新数据
 
-#### 配置 Pinecone 搜索
+#### 配置 AI 向量搜索
 编辑 `project.config.ts` 来启用 AI 语义搜索：
 
 ```typescript
@@ -43,29 +43,19 @@ export const projectConfig = {
   search: {
     enableVectorSearch: true, // 启用向量搜索
     pinecone: {
-      apiKey: process.env.PINECONE_API_KEY || '',
-      environment: process.env.PINECONE_ENVIRONMENT || '',
-      indexName: process.env.PINECONE_INDEX || 'docs-search'
+      apiKey: 'your-pinecone-api-key',
+      environment: 'your-pinecone-environment',
+      indexName: 'your-index-name'
     }
   }
 }
 ```
 
-**环境变量设置**:
-```bash
-PINECONE_API_KEY=your_pinecone_api_key
-PINECONE_ENVIRONMENT=your_pinecone_environment  
-PINECONE_INDEX=docs-search
-```
-
-#### 搜索组件说明
-- **SimpleSearch**: 🔍 本地搜索 - 快速搜索已知文档内容
-- **PineconeSearch**: 🤖 智能搜索 - AI 语义理解，支持自然语言查询
-
-### 🌟 流星雨动画
-- 美观的背景动画效果
-- 自适应性能优化
-- 不影响页面交互
+### 🌟 视觉特效
+- **流星雨动画**: 美观的背景动画效果
+- **浮动云朵**: 首页四朵浮动云朵，增添动感
+- **响应式设计**: 完美适配桌面端和移动端
+- **主题适配**: 支持浅色和深色主题切换
 
 ## 项目结构
 

@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import MeteorShower from '@site/src/components/MeteorShower';
+import FloatingClouds from '../components/FloatingClouds';
 
 import styles from './index.module.css';
 import projectConfig, { getGitHubUrls } from '../../project.config';
@@ -16,6 +17,7 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <FloatingClouds />
       <div className={clsx('container', styles.heroContainer)}>
         <div className={styles.heroContent}>
           <div className={styles.heroLeft}>

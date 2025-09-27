@@ -840,13 +840,13 @@
 }
 
 .codePreview {
-  /* 继承prism-code的基础样式 */
+  /* Inherits base styles from prism-code */
   width: 100%;
   max-width: 580px;
   min-height: 280px;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
   transform: translateZ(0);
-  /* 覆盖prism-code的某些属性以适配首页设计 */
+  /* Override certain prism-code properties to fit homepage design */
   box-shadow: 0 16px 64px rgba(0, 0, 0, 0.1) !important;
   border-radius: 16px !important;
 }
