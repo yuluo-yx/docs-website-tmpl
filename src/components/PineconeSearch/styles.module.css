@@ -1,0 +1,308 @@
+/* PineconeSearch 组件样式 */
+.searchContainer {
+  position: relative;
+  z-index: 1000;
+}
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--ifm-color-primary-lighter), var(--ifm-color-primary));
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(var(--ifm-color-primary-rgb), 0.3);
+}
+
+.searchButton:hover,
+.searchButtonActive {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--ifm-color-primary-rgb), 0.4);
+}
+
+.searchButtonDisabled {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-secondary-light);
+  border: none;
+  border-radius: 20px;
+  cursor: not-allowed;
+  font-size: 0.9rem;
+  color: var(--ifm-color-secondary-dark);
+  opacity: 0.6;
+}
+
+.searchButtonText {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.searchShortcut {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-family: monospace;
+  margin-left: 0.5rem;
+}
+
+.searchModal {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 500px;
+  max-width: 90vw;
+  max-height: 70vh;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-primary-light);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(var(--ifm-color-primary-rgb), 0.15);
+  backdrop-filter: blur(20px);
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.searchHeader {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-primary-lightest);
+  background: linear-gradient(135deg, rgba(var(--ifm-color-primary-rgb), 0.05), rgba(var(--ifm-color-primary-rgb), 0.1));
+}
+
+.searchInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--ifm-color-primary-light);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.1);
+}
+
+.searchInput::placeholder {
+  color: var(--ifm-color-content-secondary);
+}
+
+.searchSpinner {
+  position: absolute;
+  right: 1rem;
+  font-size: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.searchInfo {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--ifm-color-primary-dark);
+  text-align: center;
+  font-weight: 500;
+}
+
+.searchResults {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.resultsHeader {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-content-secondary);
+  border-bottom: 1px solid var(--ifm-color-primary-lightest);
+  background: rgba(var(--ifm-color-primary-rgb), 0.03);
+  font-weight: 600;
+}
+
+.searchResult {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-primary-lightest);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.searchResult:hover,
+.searchResultSelected {
+  background: linear-gradient(135deg, rgba(var(--ifm-color-primary-rgb), 0.08), rgba(var(--ifm-color-primary-rgb), 0.12));
+  transform: translateX(4px);
+}
+
+.searchResult:last-child {
+  border-bottom: none;
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.resultIcon {
+  font-size: 1.2rem;
+}
+
+.resultTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.resultScore {
+  padding: 0.25rem 0.5rem;
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  color: white;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.resultContent {
+  font-size: 0.9rem;
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.noResults {
+  text-align: center;
+  padding: 2rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+.noResultsIcon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.noResultsHint {
+  font-size: 0.9rem;
+  color: var(--ifm-color-content-secondary);
+  margin-top: 0.5rem;
+}
+
+.searchTips {
+  padding: 2rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+.searchTips h4 {
+  color: var(--ifm-color-primary-dark);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.searchTips ul {
+  list-style: none;
+  padding: 0;
+}
+
+.searchTips li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchTips li::before {
+  content: '✨';
+  font-size: 0.8rem;
+}
+
+.searchTips kbd {
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-dark);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+/* 深色主题适配 */
+[data-theme='dark'] .searchModal {
+  background: rgba(24, 25, 26, 0.95);
+  border-color: rgba(var(--ifm-color-primary-rgb), 0.3);
+}
+
+[data-theme='dark'] .searchInput {
+  background: rgba(55, 65, 81, 0.8);
+  color: #f9fafb;
+}
+
+[data-theme='dark'] .searchHeader {
+  background: linear-gradient(135deg, rgba(var(--ifm-color-primary-rgb), 0.1), rgba(var(--ifm-color-primary-rgb), 0.2));
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .searchModal {
+    width: 95vw;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  
+  .searchButton {
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .searchButtonText {
+    display: none;
+  }
+  
+  .searchShortcut {
+    display: none;
+  }
+}
+
+/* 滚动条样式 */
+.searchResults::-webkit-scrollbar {
+  width: 6px;
+}
+
+.searchResults::-webkit-scrollbar-track {
+  background: var(--ifm-color-primary-lightest);
+  border-radius: 3px;
+}
+
+.searchResults::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-primary-light);
+  border-radius: 3px;
+}
+
+.searchResults::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-primary);
+}
