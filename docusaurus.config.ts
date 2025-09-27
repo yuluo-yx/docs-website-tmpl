@@ -58,27 +58,7 @@ const config: Config = {
   },
   themes: ['@docusaurus/theme-mermaid'],
 
-  plugins: [
-    [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-      ({
-        hashed: true,
-        language: ["en", "zh"],
-        highlightSearchTermsOnTargetPage: true,
-        explicitSearchResultPath: true,
-        searchBarShortcut: true,
-        searchBarShortcutHint: true,
-        docsRouteBasePath: "/docs",
-        blogRouteBasePath: "/blog",
-        indexDocs: true,
-        indexBlog: true,
-        indexPages: true,
-        removeDefaultStopWordFilter: false,
-        searchContextByPaths: ["docs", "blog"],
-      }),
-    ],
-  ],
+  plugins: [],
 
   presets: [
     [

@@ -154,9 +154,9 @@ docs-website-tmpl/
 ## 🔍 搜索配置
 
 ### 本地搜索
-自动启用.
+自动启用. 使用 Fuze.js 实现，效果不好，建议 https://www.algolia.com/ 。
 
-### AI 向量搜索
+### AI 向量搜索（调试中）
 编辑 `project.config.ts` 启用：
 
 ```typescript
