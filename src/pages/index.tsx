@@ -23,7 +23,7 @@ function HomepageHeader() {
           <div className={styles.heroLeft}>
             <div className={styles.titleRow}>
               <img 
-                src="/img/logo.svg" 
+                src="img/logo.svg" 
                 alt={siteConfig.title}
                 className={styles.heroLogo}
               />
