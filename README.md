@@ -1,6 +1,7 @@
 # 📚 Docusaurus 文档网站模板
 
 > Tips：所有代码都由 ai 生成，外加一些修改优化，可以构建并部署！
+> 
 > 基于 Docusaurus 3 构建的现代化文档网站模板，支持中英文双语，内置智能搜索系统和动效设计
 
 [![Built with Docusaurus](https://img.shields.io/badge/Built%20with-Docusaurus-brightgreen.svg)](https://docusaurus.io/)
