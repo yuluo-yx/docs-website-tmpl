@@ -29,7 +29,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'api/overview',
         'api/authentication',
-        'api/endpoints',
       ],
     },
     {

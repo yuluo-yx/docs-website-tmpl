@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '@theme/Layout'
+import Translate, {translate} from '@docusaurus/Translate'
 import styles from './team.module.css'
 
 interface TeamMember {
@@ -14,19 +15,43 @@ interface TeamMember {
 
 const TeamMembers: TeamMember[] = [
   {
-    name: '您的姓名',
-    role: '项目创建者 & 主要开发者',
+    name: translate({
+      id: 'team.yourName',
+      message: '您的姓名',
+      description: 'Your name placeholder'
+    }),
+    role: translate({
+      id: 'team.creatorRole',
+      message: '项目创建者 & 主要开发者',
+      description: 'Creator and main developer role'
+    }),
     avatar: '/img/team/avatar-placeholder.svg',
-    bio: '热衷于创建精美的文档和开发者体验。',
+    bio: translate({
+      id: 'team.creatorBio',
+      message: '热衷于创建精美的文档和开发者体验。',
+      description: 'Creator bio'
+    }),
     github: 'https://github.com/your-username',
     twitter: 'https://twitter.com/your-handle',
     website: 'https://your-website.com',
   },
   {
-    name: '贡献者姓名',
-    role: '核心贡献者',
+    name: translate({
+      id: 'team.contributorName',
+      message: '贡献者姓名',
+      description: 'Contributor name placeholder'
+    }),
+    role: translate({
+      id: 'team.contributorRole',
+      message: '核心贡献者',
+      description: 'Core contributor role'
+    }),
     avatar: '/img/team/avatar-placeholder.svg',
-    bio: '喜欢构建能帮助开发者提高效率的工具。',
+    bio: translate({
+      id: 'team.contributorBio',
+      message: '喜欢构建能帮助开发者提高效率的工具。',
+      description: 'Contributor bio'
+    }),
     github: 'https://github.com/contributor-username',
   },
   // Add more team members as needed
@@ -85,15 +110,29 @@ function TeamMemberComponent({ name, role, avatar, bio, github, twitter, website
 export default function Team(): React.JSX.Element {
   return (
     <Layout
-      title="我们的团队"
-      description="认识这个项目背后的优秀人才">
+      title={translate({
+        id: 'team.title',
+        message: '我们的团队',
+        description: 'The page title for team page'
+      })}
+      description={translate({
+        id: 'team.description',
+        message: '认识这个项目背后的优秀人才',
+        description: 'The page description for team page'
+      })}>
       <div className={styles.teamPage}>
         <div className="container">
           <div className={styles.teamHeader}>
-            <h1 className={styles.teamTitle}>👥 认识我们的团队</h1>
+            <h1 className={styles.teamTitle}>
+              👥 <Translate id="team.pageTitle" description="Team page title">认识我们的团队</Translate>
+            </h1>
             <p className={styles.teamDescription}>
-              我们是一群充满激情的开发者、设计师和开源爱好者，
-              致力于为社区构建卓越的工具。
+              <Translate 
+                id="team.pageDescription" 
+                description="Team page description"
+              >
+                我们是一群充满激情的开发者、设计师和开源爱好者，致力于为社区构建卓越的工具。
+              </Translate>
             </p>
           </div>
           
@@ -105,24 +144,29 @@ export default function Team(): React.JSX.Element {
           
           <div className={styles.joinTeam}>
             <div className={styles.joinCard}>
-              <h2 className={styles.joinTitle}>🚀 想要加入我们吗？</h2>
+              <h2 className={styles.joinTitle}>
+                🚀 <Translate id="team.joinUs" description="Join us title">想要加入我们吗？</Translate>
+              </h2>
               <p className={styles.joinDescription}>
-                我们一直在寻找充满激情的贡献者来帮助改进这个项目。
-                无论您是开发者、设计师、作者，还是只是热爱开源的人，
-                我们的团队都有您的位置！
+                <Translate 
+                  id="team.joinDescription" 
+                  description="Join team description"
+                >
+                  我们一直在寻找充满激情的贡献者来帮助改进这个项目。无论您是开发者、设计师、作者，还是只是热爱开源的人，我们的团队都有您的位置！
+                </Translate>
               </p>
               <div className={styles.joinButtons}>
                 <a 
                   href="/community/contributing" 
                   className="button button--primary button--lg"
                 >
-                  📖 贡献指南
+                  📖 <Translate id="team.contributingGuide" description="Contributing guide button">贡献指南</Translate>
                 </a>
                 <a 
                   href="https://github.com/your-username/your-project-name/issues" 
                   className="button button--secondary button--lg"
                 >
-                  🐛 查看问题
+                  🐛 <Translate id="team.viewIssues" description="View issues button">查看问题</Translate>
                 </a>
               </div>
             </div>

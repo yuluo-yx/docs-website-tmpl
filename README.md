@@ -1,226 +1,186 @@
-# 文档网站模板
+# 📚 Docusaurus 文档网站模板
 
-基于 Docusaurus 3 构建的双主题文档网站模板，支持纸质奶油色浅色主题和星夜深色主题。
+> Tips：所有代码都由 ai 生成，外加一些修改优化，可以构建并部署！
+> 基于 Docusaurus 3 构建的现代化文档网站模板，支持中英文双语，内置智能搜索系统和动效设计
 
-## 快速开始
+[![Built with Docusaurus](https://img.shields.io/badge/Built%20with-Docusaurus-brightgreen.svg)](https://docusaurus.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## ✨ 核心特性
+
+🌍 **多语言支持** - 完整的中英文双语支持，一键切换  
+🔍 **智能搜索** - 本地搜索 + AI 向量搜索双重搜索系统  
+🎨 **美观主题** - 浅色奶油色 + 深色星夜主题  
+🌟 **动效设计** - 流星雨背景 + 浮动云朵动画  
+📱 **响应式设计** - 完美适配桌面端和移动端  
+⚙️ **一键配置** - 统一配置文件，自动同步所有设置  
+
+## 🚀 快速开始
+
+```bash
+# 1. 克隆项目
+git clone https://github.com/your-username/docs-website-tmpl.git
+cd docs-website-tmpl
+
+# 2. 安装依赖
+npm install
+
+# 3. 启动开发服务器
+npm start
+
+# 4. 浏览器自动打开 http://localhost:3000
+```
 
 ### 环境要求
 - Node.js 18+
 - npm 或 yarn
 
-### 安装与运行
+## 🌍 多语言支持
 
-1. **安装依赖**
-   ```bash
-   npm install
-   ```
+本模板完整支持中英文双语，用户可通过导航栏右上角的语言切换器切换语言。
 
-2. **启动开发服务器**
-   ```bash
-   npm start
-   ```
-   网站将在 `http://localhost:3000` 运行
+### 访问方式
+- **中文版本**：`http://localhost:3000/`  
+- **英文版本**：`http://localhost:3000/en/`
 
-3. **构建生产版本**
-   ```bash
-   npm run build
-   ```
+### 多语言开发命令
 
-## ✨ 核心功能
+```bash
+# 开发模式
+npm start          # 默认中文
+npm run start:en   # 英文版本
+npm run start:zh   # 中文版本
 
-### 🔍 智能双重搜索系统
-- **本地搜索**: 基于 Fuse.js 的快速文档搜索，按 `/` 键快捷访问
-- **AI 向量搜索**: 基于 Pinecone 的智能语义搜索，右下角浮动按钮
-- **全局可用**: 搜索功能在所有页面都可访问
-- **实时索引**: 自动从 Docusaurus 搜索索引获取最新数据
+# 构建
+npm run build      # 构建所有语言
+npm run build:en   # 只构建英文
+npm run build:zh   # 只构建中文
 
-#### 配置 AI 向量搜索
-编辑 `project.config.ts` 来启用 AI 语义搜索：
-
-```typescript
-export const projectConfig = {
-  // ... 其他配置
-  search: {
-    enableVectorSearch: true, // 启用向量搜索
-    pinecone: {
-      apiKey: 'your-pinecone-api-key',
-      environment: 'your-pinecone-environment',
-      indexName: 'your-index-name'
-    }
-  }
-}
+# 翻译管理
+npm run write-translations        # 生成翻译文件
+npm run write-translations:en     # 生成英文翻译
 ```
 
-### 🌟 视觉特效
-- **流星雨动画**: 美观的背景动画效果
-- **浮动云朵**: 首页四朵浮动云朵，增添动感
-- **响应式设计**: 完美适配桌面端和移动端
-- **主题适配**: 支持浅色和深色主题切换
+### 添加多语言内容
 
-## 项目结构
+**英文文档**：在 `i18n/en/docusaurus-plugin-content-docs/current/` 创建对应的 `.md` 文件
 
-```
-docs-website-tmpl/
-├── docs/                    # 文档页面
-│   ├── intro.md            # 首页介绍
-│   ├── getting-started/    # 入门指南
-│   │   ├── installation.md
-│   │   ├── quickstart.md
-│   │   └── configuration.md
-│   ├── api/                # API 文档
-│   │   ├── overview.md
-│   │   ├── authentication.md
-│   │   └── endpoints.md
-│   ├── examples/           # 使用示例
-│   │   └── basic-usage.md
-│   ├── contributing/       # 贡献指南
-│   │   └── how-to-contribute.md
-│   └── troubleshooting/    # 问题排查
-│       └── common-issues.md
-├── blog/                   # 博客文章
-│   ├── authors.yml         # 作者信息
-│   └── 2025-01-01-welcome.md
-├── src/
-│   ├── components/         # 自定义 React 组件
-│   ├── css/               # 自定义样式
-│   └── pages/             # 自定义页面
-├── static/                # 静态资源
-│   └── img/
-│       ├── logo.svg       # 浅色主题 Logo
-│       └── logo-dark.svg  # 深色主题 Logo
-├── docusaurus.config.js   # 主配置文件
-├── sidebars.js            # 侧边栏配置
-└── package.json
-```
+**英文博客**：在 `i18n/en/docusaurus-plugin-content-blog/` 创建博客文章
 
-## 添加新内容
+## ⚙️ 配置项目
 
-### 添加新文档页面
-
-1. **创建 Markdown 文件**
-   ```bash
-   # 在 docs/ 目录下创建新的 .md 文件
-   touch docs/new-feature.md
-   ```
-
-2. **添加内容和元数据**
-   ```markdown
-   ---
-   sidebar_position: 3
-   ---
-
-   # 新功能标题
-
-   这里是内容...
-   ```
-
-3. **更新侧边栏配置** (如需要)
-   编辑 `sidebars.js`：
-   ```javascript
-   module.exports = {
-     tutorialSidebar: [
-       'intro',
-       'new-feature', // 添加新页面
-       {
-         type: 'category',
-         label: '现有分类',
-         items: ['existing-doc'],
-       },
-     ],
-   };
-   ```
-
-### 添加新的文档分类
-
-1. **创建目录和文件**
-   ```bash
-   mkdir docs/new-category
-   touch docs/new-category/index.md
-   ```
-
-2. **更新侧边栏配置**
-   ```javascript
-   module.exports = {
-     tutorialSidebar: [
-       'intro',
-       {
-         type: 'category',
-         label: '新分类',
-         items: ['new-category/index'],
-       },
-     ],
-   };
-   ```
-
-### 添加博客文章
-
-1. **创建博客文件**
-   ```bash
-   # 文件名格式：YYYY-MM-DD-title.md
-   touch blog/2025-01-15-new-post.md
-   ```
-
-2. **添加文章内容**
-   ```markdown
-   ---
-   slug: new-post
-   title: 文章标题
-   authors: [author-name]
-   tags: [tag1, tag2]
-   ---
-
-   文章摘要...
-
-   <!--truncate-->
-
-   详细内容...
-   ```
-
-### 自定义配置
-
-**🎯 一键配置 - 只需修改一个文件！**
-
-编辑根目录的 `project.config.ts` 来更新所有项目信息：
+**🎯 一键配置** - 只需编辑根目录的 `project.config.ts`：
 
 ```typescript
 const projectConfig: ProjectConfig = {
-  // 基本信息
   title: '你的项目名称',
   tagline: '你的项目描述',
-  description: '详细描述',
   
-  // 作者信息
   author: {
     name: '你的姓名',
     email: 'your.email@example.com',
   },
   
-  // GitHub 仓库
   github: {
     username: 'your-username',
     repoName: 'your-repo-name',
   },
   
-  // 部署配置
   deployment: {
-    url: 'https://your-username.github.io',
-    baseUrl: '/', // GitHub Pages项目页面用 '/repo-name/'
+    url: 'https://your-domain.com',
+    baseUrl: '/',
   },
 }
 ```
 
-**自动同步的内容：**
-- ✅ 网站标题、标语和所有 GitHub 链接
-- ✅ 导航栏、页脚、首页按钮链接
-- ✅ 文档编辑链接和部署配置
+配置完成后运行 `npm run build` 即可生效！
 
-**配置完成后：** 运行 `npm run build` 即可生效。
+## 📁 项目结构
 
-## 常用命令
+```
+docs-website-tmpl/
+├── docs/                    # 中文文档
+├── blog/                    # 中文博客
+├── i18n/                    # 多语言翻译文件
+│   ├── zh-Hans/            # 中文翻译
+│   └── en/                 # 英文翻译和内容
+├── src/
+│   ├── components/         # React 组件
+│   ├── css/               # 自定义样式
+│   └── pages/             # 自定义页面
+├── static/img/            # 静态资源
+├── docusaurus.config.ts   # Docusaurus 配置
+├── project.config.ts      # 项目配置（重要！）
+└── sidebars.ts           # 侧边栏配置
+```
+
+## 📝 添加内容
+
+### 添加文档页面
+
+1. 在 `docs/` 创建 `.md` 文件
+2. 添加 frontmatter：
+   ```markdown
+   ---
+   sidebar_position: 1
+   title: 页面标题
+   ---
+   
+   # 内容标题
+   
+   页面内容...
+   ```
+
+### 添加博客文章
+
+1. 在 `blog/` 创建 `YYYY-MM-DD-title.md` 文件
+2. 添加 frontmatter：
+   ```markdown
+   ---
+   slug: article-slug
+   title: 文章标题
+   authors: [author-name]
+   tags: [tag1, tag2]
+   ---
+   
+   文章摘要...
+   
+   <!--truncate-->
+   
+   详细内容...
+   ```
+
+## 🔍 搜索配置
+
+### 本地搜索
+自动启用.
+
+### AI 向量搜索
+编辑 `project.config.ts` 启用：
+
+```typescript
+search: {
+  enableVectorSearch: true,
+  pinecone: {
+    apiKey: 'your-pinecone-api-key',
+    environment: 'your-environment',
+    indexName: 'your-index'
+  }
+}
+```
+
+## 📦 常用命令
 
 ```bash
-npm start              # 启动开发服务器
+npm start             # 开发服务器
 npm run build         # 构建生产版本
 npm run serve         # 预览构建结果
-npm run clear         # 清除构建缓存
+npm run clear         # 清除缓存
+npm run lint          # 代码检查
+npm run typecheck     # 类型检查
 ```
+
+## 📄 许可证
+
+MIT License - 详见 [LICENSE](LICENSE) 文件

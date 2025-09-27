@@ -1,36 +1,36 @@
-# 基础使用示例
+# Basic Usage Examples
 
-通过这些基础使用示例快速开始。
+Get started quickly with these basic usage examples.
 
-## 快速开始示例
+## Quick Start Example
 
 ```javascript
-// 导入库
+// Import the library
 import { Client } from 'our-library';
 
-// 初始化客户端
+// Initialize the client
 const client = new Client({
   apiKey: 'your-api-key',
   baseUrl: 'https://api.example.com/v1'
 });
 
-// 进行第一次 API 调用
+// Make your first API call
 async function example() {
   try {
     const result = await client.getData();
-    console.log('成功:', result);
+    console.log('Success:', result);
   } catch (error) {
-    console.error('错误:', error);
+    console.error('Error:', error);
   }
 }
 
 example();
 ```
 
-## 配置示例
+## Configuration Example
 
 ```javascript
-// 高级配置
+// Advanced configuration
 const client = new Client({
   apiKey: process.env.API_KEY,
   baseUrl: 'https://api.example.com/v1',
@@ -40,15 +40,15 @@ const client = new Client({
 });
 ```
 
-## 数据获取示例
+## Data Fetching Examples
 
-### 获取单个项目
+### Get Single Item
 ```javascript
 const item = await client.getItem('item-id-123');
 console.log(item.title, item.content);
 ```
 
-### 获取多个项目
+### Get Multiple Items
 ```javascript
 const items = await client.getItems({
   page: 1,
@@ -62,7 +62,7 @@ items.data.forEach(item => {
 });
 ```
 
-### 搜索项目
+### Search Items
 ```javascript
 const searchResults = await client.searchItems({
   query: 'hello world',
@@ -71,34 +71,34 @@ const searchResults = await client.searchItems({
 });
 ```
 
-## CRUD 操作
+## CRUD Operations
 
-### 创建
+### Create
 ```javascript
 const newItem = await client.createItem({
-  title: '我的新项目',
-  content: '这是我的新项目的内容。',
-  tags: ['示例', '演示']
+  title: 'My New Item',
+  content: 'This is the content of my new item.',
+  tags: ['example', 'demo']
 });
 ```
 
-### 更新
+### Update
 ```javascript
 const updatedItem = await client.updateItem('item-id-123', {
-  title: '更新的标题',
-  content: '更新的内容'
+  title: 'Updated Title',
+  content: 'Updated content'
 });
 ```
 
-### 删除
+### Delete
 ```javascript
 const deleted = await client.deleteItem('item-id-123');
 if (deleted) {
-  console.log('项目删除成功');
+  console.log('Item deleted successfully');
 }
 ```
 
-## 错误处理
+## Error Handling
 
 ```javascript
 async function handleErrors() {
@@ -107,21 +107,21 @@ async function handleErrors() {
     return result;
   } catch (error) {
     if (error.status === 401) {
-      console.error('身份验证失败');
-      // 处理身份验证错误
+      console.error('Authentication failed');
+      // Handle authentication error
     } else if (error.status === 429) {
-      console.error('超出速率限制');
-      // 处理速率限制
+      console.error('Rate limit exceeded');
+      // Handle rate limiting
     } else {
-      console.error('意外错误:', error.message);
-      // 处理其他错误
+      console.error('Unexpected error:', error.message);
+      // Handle other errors
     }
     throw error;
   }
 }
 ```
 
-## React 示例
+## React Example
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -150,12 +150,12 @@ function DataComponent() {
     fetchData();
   }, []);
 
-  if (loading) return <div>加载中...</div>;
-  if (error) return <div>错误: {error}</div>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div>
-      <h2>数据项目</h2>
+      <h2>Data Items</h2>
       <ul>
         {data.map(item => (
           <li key={item.id}>
@@ -171,7 +171,7 @@ function DataComponent() {
 export default DataComponent;
 ```
 
-## Node.js 服务器示例
+## Node.js Server Example
 
 ```javascript
 const express = require('express');
@@ -182,7 +182,7 @@ const client = new Client({ apiKey: process.env.API_KEY });
 
 app.use(express.json());
 
-// 代理端点
+// Proxy endpoint
 app.get('/api/data', async (req, res) => {
   try {
     const data = await client.getData(req.query);
@@ -194,7 +194,7 @@ app.get('/api/data', async (req, res) => {
   }
 });
 
-// 创建端点
+// Create endpoint
 app.post('/api/data', async (req, res) => {
   try {
     const newItem = await client.createItem(req.body);
@@ -208,14 +208,14 @@ app.post('/api/data', async (req, res) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`服务器运行在端口 ${port}`);
+  console.log(`Server running on port ${port}`);
 });
 ```
 
-## 下一步
+## Next Steps
 
-现在已经了解了基本使用方法：
+Now that you understand the basics:
 
-1. 查看 [配置](/docs/getting-started/configuration) 了解高级设置
-2. 探索 [API 文档](/docs/api/overview) 获取完整参考
-3. 了解 [故障排除](/docs/troubleshooting/common-issues) 常见问题
+1. Check out [Configuration](/docs/getting-started/configuration) for advanced settings
+2. Explore [API Documentation](/docs/api/overview) for complete reference
+3. Learn about [Troubleshooting](/docs/troubleshooting/common-issues) common issues

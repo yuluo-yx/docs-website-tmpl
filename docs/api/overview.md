@@ -19,9 +19,7 @@ sidebar_position: 1
 
 开始使用我们的 API：
 
-1. **获取 API 密钥**: [身份验证指南](./authentication)
-2. **探索端点**: [API 端点](./endpoints)
-3. **集成到应用**: 查看 [示例](../examples/basic-usage)
+1. **集成到应用**: 查看 [示例](../examples/basic-usage)
 
 ## � API 版本控制
 
@@ -33,4 +31,4 @@ sidebar_position: 1
 
 ---
 
-**准备好开始了吗？** 查看我们的 [身份验证指南](./authentication) 或直接跳转到 [API 端点](./endpoints)！
+**准备好开始了吗？** 查看我们的 [身份验证指南](./authentication).

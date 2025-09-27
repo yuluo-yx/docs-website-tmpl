@@ -8,6 +8,7 @@ const darkCodeTheme = themes.vsDark
 
 // Generate GitHub links from project configuration
 const githubUrls = getGitHubUrls(projectConfig)
+// If needed, get author information
 const authorInfo = getAuthorInfo(projectConfig)
 
 const config: Config = {
@@ -26,6 +27,9 @@ const config: Config = {
   organizationName: projectConfig.github.username, // Replace with your GitHub username or organization name
   projectName: projectConfig.github.repoName, // Replace with your repository name
 
+  // check links and markdown links
+  // if the link is broken, it will throw an error during build
+  // if the markdown link is broken, it will show a warning during build
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -34,7 +38,19 @@ const config: Config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    locales: ['zh-Hans', 'en'],
+    localeConfigs: {
+      'zh-Hans': {
+        label: '简体中文',
+        direction: 'ltr',
+        htmlLang: 'zh-CN',
+      },
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+    },
   },
 
   markdown: {
@@ -143,6 +159,10 @@ const config: Config = {
               href: githubUrls.issues,
             },
           ],
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           href: githubUrls.repo,
